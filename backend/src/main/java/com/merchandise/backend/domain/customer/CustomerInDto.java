@@ -10,7 +10,8 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class customerOutDto {
+public class CustomerInDto {
+    Long customerId;
     String firstName;
     String lastName;
     String email;
