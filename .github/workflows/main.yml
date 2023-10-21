@@ -1,0 +1,19 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set Up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '21'
+
+      - name: Build and Test
+        env:
+          MY_SECRET_KEY: ${{ secrets.DATABASE_PASSWORD }}
+        run: |
+          # Set the secret as an environment variable
+          export DATABASE_PASSWORD=$MY_SECRET_KEY
+          ./mvnw clean install
