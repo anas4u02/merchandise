@@ -1,38 +1,24 @@
 package com.merchandise.backend.domain.customer;
 
-import jakarta.persistence.*;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-@Entity
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "customer")
-public class CustomerEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-
+public class customerOutDto {
     String firstName;
-
     String lastName;
-
-    String gender;
-
     String email;
-
+    String gender;
     String phoneNumber;
-
     String address;
-
     String city;
-
     String pinCode;
-
     String state;
-
     String country;
 }
