@@ -2,7 +2,7 @@ package com.merchandise.backend.domain.customer;
 
 import java.util.List;
 
-public interface customerService {
+public interface CustomerService {
     List<CustomerOutDto> findAll();
 
     CustomerOutDto findOne(Long id);
