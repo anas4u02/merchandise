@@ -7,7 +7,7 @@ import java.util.List;
 @Component
 public class CustomerMapper {
 
-    public CustomerEntity customerOutDtoToEntity(CustomerInDto customerInDto) {
+    public CustomerEntity customerInDtoToEntity(CustomerInDto customerInDto) {
         CustomerEntity customerEntity = new CustomerEntity();
         customerEntity.setFirstName(customerInDto.getFirstName());
         customerEntity.setLastName(customerInDto.getLastName());
