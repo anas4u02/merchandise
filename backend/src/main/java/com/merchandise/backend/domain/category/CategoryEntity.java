@@ -11,7 +11,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "category")
-public class Category {
+public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
