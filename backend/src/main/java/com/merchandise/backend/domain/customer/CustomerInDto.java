@@ -11,7 +11,6 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CustomerInDto {
-    Long customerId;
     String firstName;
     String lastName;
     String email;
