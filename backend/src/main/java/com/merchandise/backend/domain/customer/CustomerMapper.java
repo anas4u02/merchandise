@@ -24,6 +24,7 @@ public class CustomerMapper {
 
     public CustomerOutDto customerEntityToOutDto(CustomerEntity customerEntity) {
         CustomerOutDto customerOutDto = new CustomerOutDto();
+        customerOutDto.setCustomerId(customerEntity.getId());
         customerOutDto.setFirstName(customerEntity.getFirstName());
         customerOutDto.setLastName(customerEntity.getLastName());
         customerOutDto.setPhoneNumber(customerEntity.getPhoneNumber());
