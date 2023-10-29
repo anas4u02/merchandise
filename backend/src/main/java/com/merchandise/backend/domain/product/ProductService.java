@@ -4,13 +4,13 @@ import java.util.List;
 
 public interface ProductService {
 
-    public List<ProductOutDto> findAll();
+    List<ProductOutDto> findAll();
 
-    public ProductOutDto findOne(Long id);
+    ProductOutDto findOne(Long id);
 
-    public ProductOutDto create(ProductInDto productInDto);
+    ProductOutDto create(ProductInDto productInDto);
 
-    public ProductOutDto update(ProductInDto productInDto, Long id);
+    ProductOutDto update(ProductInDto productInDto, Long id);
 
-    public void delete(Long id);
+    void delete(Long id);
 }

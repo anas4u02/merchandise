@@ -1,9 +1,11 @@
 package com.merchandise.backend.domain.product;
 
 import com.merchandise.backend.domain.category.CategoryEntity;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class ProductMapper {
 
     public ProductEntity inDtoToEntity(ProductInDto productInDto, CategoryEntity categoryEntity) {
