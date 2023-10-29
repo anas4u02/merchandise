@@ -3,9 +3,11 @@ package com.merchandise.backend.domain.product;
 import com.merchandise.backend.domain.category.CategoryEntity;
 import com.merchandise.backend.domain.category.CategoryNotFoundException;
 import com.merchandise.backend.domain.category.CategoryRepo;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepo productRepo;
