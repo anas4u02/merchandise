@@ -1,8 +1,12 @@
 package com.merchandise.backend.domain.category;
 
+import com.merchandise.backend.domain.product.ProductEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,6 +22,6 @@ public class CategoryEntity {
 
     String categoryName;
 
-//    @OneToMany
-//    List<Product> products = new ArrayList<>();
+    @OneToMany
+    List<ProductEntity> products = new ArrayList<>();
 }
