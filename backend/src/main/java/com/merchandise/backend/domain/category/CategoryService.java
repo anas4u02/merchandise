@@ -1,5 +1,7 @@
 package com.merchandise.backend.domain.category;
 
+import com.merchandise.backend.domain.product.ProductOutDto;
+
 import java.util.List;
 
 public interface CategoryService {
@@ -7,6 +9,8 @@ public interface CategoryService {
     List<CategoryOutDto> findAll();
 
     CategoryOutDto findOne(Long id);
+
+    List<ProductOutDto> findAllProducts(Long id);
 
     CategoryOutDto create(CategoryInDto categoryInDto);
 

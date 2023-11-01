@@ -1,5 +1,8 @@
 package com.merchandise.backend.domain.category;
 
+import com.merchandise.backend.domain.product.ProductEntity;
+import com.merchandise.backend.domain.product.ProductMapper;
+import com.merchandise.backend.domain.product.ProductOutDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +14,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepo categoryRepo;
     private final CategoryMapper categoryMapper;
+    private final ProductMapper productMapper;
 
     @Override
     public List<CategoryOutDto> findAll() {
@@ -22,6 +26,13 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryOutDto findOne(Long id) {
         CategoryEntity categoryEntity = this.getCategory(id);
         return categoryMapper.entityToOutDto(categoryEntity);
+    }
+
+    @Override
+    public List<ProductOutDto> findAllProducts(Long id) {
+        CategoryEntity categoryEntity = this.getCategory(id);
+        List<ProductEntity> productEntities = categoryEntity.getProducts();
+        return productMapper.entitiesToOutDtos(productEntities);
     }
 
     @Override
@@ -47,6 +58,6 @@ public class CategoryServiceImpl implements CategoryService {
 
     private CategoryEntity getCategory(Long id) {
         return categoryRepo.findById(id)
-                .orElseThrow(() -> new CategoryNotFoundException("Category with " + id + " not found!"));
+                .orElseThrow(() -> new CategoryNotFoundException("Category with id: " + id + " not found!"));
     }
 }

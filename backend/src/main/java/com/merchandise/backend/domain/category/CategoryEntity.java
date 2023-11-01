@@ -22,6 +22,6 @@ public class CategoryEntity {
 
     String categoryName;
 
-    @OneToMany
+    @OneToMany(mappedBy = "categoryEntity", cascade = CascadeType.ALL)
     List<ProductEntity> products = new ArrayList<>();
 }

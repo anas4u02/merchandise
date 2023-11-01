@@ -47,6 +47,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     private CustomerEntity getCustomerEntity(Long id) {
         return customerRepo.findById(id).orElseThrow(() ->
-                new CustomerNotFoundException("Customer with " + id + " not found!"));
+                new CustomerNotFoundException("Customer with id: " + id + " not found!"));
     }
 }

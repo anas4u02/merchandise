@@ -1,5 +1,6 @@
 package com.merchandise.backend.domain.category;
 
+import com.merchandise.backend.domain.product.ProductOutDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,12 @@ public class CategoryController {
     @ResponseStatus(HttpStatus.OK)
     public CategoryOutDto findOne(@PathVariable("id") Long id) {
         return categoryService.findOne(id);
+    }
+
+    @GetMapping("/{id}/products")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProductOutDto> findProducts(@PathVariable("id") Long id) {
+        return categoryService.findAllProducts(id);
     }
 
     @PostMapping
