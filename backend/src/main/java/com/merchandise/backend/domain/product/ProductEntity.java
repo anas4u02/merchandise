@@ -1,6 +1,7 @@
 package com.merchandise.backend.domain.product;
 
 import com.merchandise.backend.domain.category.CategoryEntity;
+import com.merchandise.backend.domain.merchant.MerchantEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -30,4 +31,8 @@ public class ProductEntity {
     @ManyToOne
     @JoinColumn(name = "category_id")
     CategoryEntity categoryEntity;
+
+    @ManyToOne
+    @JoinColumn(name = "merchant_id")
+    MerchantEntity merchantEntity;
 }
