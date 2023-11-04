@@ -1,5 +1,8 @@
 package com.merchandise.backend.domain.merchant;
 
+import com.merchandise.backend.domain.product.ProductEntity;
+import com.merchandise.backend.domain.product.ProductMapper;
+import com.merchandise.backend.domain.product.ProductOutDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +14,19 @@ public class MerchantServiceImpl implements MerchantService {
 
     private final MerchantRepo merchantRepo;
     private final MerchantMapper merchantMapper;
+    private final ProductMapper productMapper;
 
     @Override
     public List<MerchantOutDto> findAll() {
         List<MerchantEntity> merchantEntities = merchantRepo.findAll();
         return merchantMapper.entitiesToOutDtos(merchantEntities);
+    }
+
+    @Override
+    public List<ProductOutDto> findAllByMerchantId(Long merchantId) {
+        MerchantEntity merchantEntity = this.getMerchant(merchantId);
+        List<ProductEntity> productEntities = merchantEntity.getProductEntities();
+        return productMapper.entitiesToOutDtos(productEntities);
     }
 
     @Override

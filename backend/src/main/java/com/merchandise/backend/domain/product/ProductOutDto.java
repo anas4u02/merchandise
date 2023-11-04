@@ -18,4 +18,5 @@ public class ProductOutDto {
     Float price;
     String imageUrl;
     Long categoryId;
+    Long merchantId;
 }

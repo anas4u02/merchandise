@@ -17,4 +17,5 @@ public class ProductInDto {
     Float price;
     String imageUrl;
     Long categoryId;
+    Long merchantId;
 }

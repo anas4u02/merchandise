@@ -1,6 +1,7 @@
 package com.merchandise.backend.domain.product;
 
 import com.merchandise.backend.domain.category.CategoryEntity;
+import com.merchandise.backend.domain.merchant.MerchantEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -8,9 +9,10 @@ import java.util.List;
 @Component
 public class ProductMapper {
 
-    public ProductEntity inDtoToEntity(ProductInDto productInDto, CategoryEntity categoryEntity) {
+    public ProductEntity inDtoToEntity(ProductInDto productInDto, CategoryEntity categoryEntity, MerchantEntity merchantEntity) {
         ProductEntity productEntity = new ProductEntity();
         productEntity.setCategoryEntity(categoryEntity);
+        productEntity.setMerchantEntity(merchantEntity);
         productEntity.setName(productInDto.getProductName());
         productEntity.setDescription(productInDto.getDescription());
         productEntity.setStockQuantity(productInDto.getStockQuantity());
@@ -28,6 +30,7 @@ public class ProductMapper {
         productOutDto.setPrice(productEntity.getPrice());
         productOutDto.setImageUrl(productEntity.getImageUrl());
         productOutDto.setCategoryId(productEntity.getCategoryEntity().getId());
+        productOutDto.setMerchantId(productEntity.getMerchantEntity().getId());
         return productOutDto;
     }
 
@@ -36,13 +39,14 @@ public class ProductMapper {
     }
 
     public ProductEntity inDtoToExistingEntity(ProductInDto productInDto, CategoryEntity
-            categoryEntity, ProductEntity productEntity) {
+            categoryEntity, MerchantEntity merchantEntity, ProductEntity productEntity) {
         productEntity.setName(productInDto.getProductName());
         productEntity.setDescription(productInDto.getDescription());
         productEntity.setStockQuantity(productInDto.getStockQuantity());
         productEntity.setPrice(productInDto.getPrice());
         productEntity.setImageUrl(productInDto.getImageUrl());
         productEntity.setCategoryEntity(categoryEntity);
+        productEntity.setMerchantEntity(merchantEntity);
         return productEntity;
     }
 }
