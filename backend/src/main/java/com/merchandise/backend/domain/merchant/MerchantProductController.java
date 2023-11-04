@@ -23,7 +23,13 @@ public class MerchantProductController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<ProductOutDto> findAllProductsByMerchant(@PathVariable("merchantId") Long merchantId) {
-        return merchantService.findAllByMerchantId(merchantId);
+        return merchantService.findAllProductsByMerchantId(merchantId);
+    }
+
+    @GetMapping("/{productId}")
+    public ProductOutDto findOneProductByMerchantId(@PathVariable("productId") Long productId,
+                                                    @PathVariable("merchantId") Long merchantId) {
+        return merchantService.findOneProductByMerchantId(merchantId, productId);
     }
 
     @PostMapping

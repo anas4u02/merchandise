@@ -2,11 +2,13 @@ package com.merchandise.backend.domain.merchant;
 
 import com.merchandise.backend.domain.product.ProductEntity;
 import com.merchandise.backend.domain.product.ProductMapper;
+import com.merchandise.backend.domain.product.ProductNotFoundException;
 import com.merchandise.backend.domain.product.ProductOutDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -23,10 +25,22 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public List<ProductOutDto> findAllByMerchantId(Long merchantId) {
+    public List<ProductOutDto> findAllProductsByMerchantId(Long merchantId) {
         MerchantEntity merchantEntity = this.getMerchant(merchantId);
         List<ProductEntity> productEntities = merchantEntity.getProductEntities();
         return productMapper.entitiesToOutDtos(productEntities);
+    }
+
+    @Override
+    public ProductOutDto findOneProductByMerchantId(Long merchantId, Long productId) {
+        MerchantEntity merchantEntity = this.getMerchant(merchantId);
+        ProductEntity productEntity = merchantEntity.
+                getProductEntities().
+                stream().
+                filter(localProductEntity -> Objects.equals(localProductEntity.getId(), productId)).
+                findFirst().
+                orElseThrow(() -> new ProductNotFoundException("Product with id: " + productId + " not found!"));
+        return productMapper.entityToOutDto(productEntity);
     }
 
     @Override

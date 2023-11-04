@@ -7,7 +7,9 @@ import java.util.List;
 public interface MerchantService {
     List<MerchantOutDto> findAll();
 
-    List<ProductOutDto> findAllByMerchantId(Long merchantId);
+    List<ProductOutDto> findAllProductsByMerchantId(Long merchantId);
+
+    ProductOutDto findOneProductByMerchantId(Long merchantId, Long productId);
 
     MerchantOutDto findOne(Long id);
 
