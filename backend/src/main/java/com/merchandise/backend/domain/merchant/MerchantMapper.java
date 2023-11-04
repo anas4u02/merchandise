@@ -16,7 +16,7 @@ public class MerchantMapper {
         merchantEntity.setCity(merchantInDto.getCity());
         merchantEntity.setState(merchantInDto.getState());
         merchantEntity.setPinCode(merchantInDto.getPinCode());
-        merchantEntity.setUpiID(merchantEntity.getUpiID());
+        merchantEntity.setUpiID(merchantInDto.getUpiId());
         return merchantEntity;
     }
 
@@ -42,7 +42,7 @@ public class MerchantMapper {
         merchantEntity.setCity(merchantInDto.getCity());
         merchantEntity.setState(merchantInDto.getState());
         merchantEntity.setPinCode(merchantInDto.getPinCode());
-        merchantEntity.setUpiID(merchantEntity.getUpiID());
+        merchantEntity.setUpiID(merchantInDto.getUpiId());
         return merchantEntity;
     }
 
