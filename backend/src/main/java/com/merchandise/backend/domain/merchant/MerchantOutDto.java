@@ -18,4 +18,5 @@ public class MerchantOutDto {
     String state;
     String pinCode;
     String upiId;
+    Boolean merchantRole;
 }

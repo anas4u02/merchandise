@@ -17,6 +17,7 @@ public class MerchantMapper {
         merchantEntity.setState(merchantInDto.getState());
         merchantEntity.setPinCode(merchantInDto.getPinCode());
         merchantEntity.setUpiID(merchantInDto.getUpiId());
+        merchantEntity.setMerchantRole(merchantInDto.getMerchantRole());
         return merchantEntity;
     }
 
@@ -31,6 +32,7 @@ public class MerchantMapper {
         merchantOutDto.setState(merchantEntity.getState());
         merchantOutDto.setPinCode(merchantEntity.getPinCode());
         merchantOutDto.setUpiId(merchantEntity.getUpiID());
+        merchantOutDto.setMerchantRole(merchantEntity.getMerchantRole());
         return merchantOutDto;
     }
 
@@ -43,6 +45,7 @@ public class MerchantMapper {
         merchantEntity.setState(merchantInDto.getState());
         merchantEntity.setPinCode(merchantInDto.getPinCode());
         merchantEntity.setUpiID(merchantInDto.getUpiId());
+        merchantEntity.setMerchantRole(merchantInDto.getMerchantRole());
         return merchantEntity;
     }
 

@@ -37,6 +37,8 @@ public class MerchantEntity {
 
     private String upiID;
 
+    private Boolean merchantRole;
+
     @OneToMany(mappedBy = "merchantEntity", cascade = CascadeType.ALL)
     private List<ProductEntity> productEntities = new ArrayList<>();
 }
