@@ -17,4 +17,5 @@ public class MerchantInDto {
     String state;
     String pinCode;
     String upiId;
+    Boolean merchantRole;
 }
