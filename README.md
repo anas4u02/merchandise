@@ -1,6 +1,6 @@
 # merchandise
 An e-commerce application allowing the customers to buy/lease products and even sell their own products.
-This is an attempt to apply all the learnings of Spring Boot framework and React which we have gathered so far and go a step further to learn and integrate microservice for 
+This is an attempt to apply all the important features of Spring Boot framework and React and go a step further and integrate microservice for 
 authentication.
 
 We have used PostgreSQL as the database, and flyway to create migration scripts for the changes we make to our entities going ahead.
