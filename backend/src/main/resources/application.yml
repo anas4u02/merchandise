@@ -1,0 +1,43 @@
+server:
+    error:
+        include-message: always
+spring:
+    config:
+        activate:
+            on-profile: production
+    datasource:
+        password: ${DATABASE_PASSWORD}
+        url: jdbc:postgresql://localhost:5432/merchandise
+        username: anas4u02
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format_sql: true
+        show-sql: true
+
+---
+spring:
+  config:
+      activate:
+          on-profile: dev
+  datasource:
+      password: ${DATABASE_PASSWORD}
+      url: jdbc:postgresql://localhost:5432/merchandise
+      username: anas4u02
+  jpa:
+      hibernate:
+          ddl-auto: create-drop
+      properties:
+          hibernate:
+              dialect: org.hibernate.dialect.PostgreSQLDialect
+              format_sql: true
+      show-sql: true
+
+---
+
+spring:
+    profiles:
+        active: dev
